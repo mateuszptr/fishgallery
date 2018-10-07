@@ -5,9 +5,10 @@
     {"name": "haddock", "files": ["plamiaki"], "title": "🐟 | Here is your random haddock ;)"},
     {"name": "guppy", "files": ["gupiki"], "title": "🐟 | Here is your random guppy ;)"},
     {"name": "shark", "files": ["rekiny"], "title": "🦈 | Here is your random shark ;)"},
+    {"name": "moray", "files": ["mureny"], "title": "🦈 | Here is your random moray ;)"},
     {"name": "lizard", "files": ["jaszczurki"], "title": "🦎 | Here is your random lizard ;)"},
     {"name": "hedgehog", "files": ["jeżyki"], "title": "🦔 | Here is your random hedgehog ;)"},
-    {"name": "fish", "files": ["rybki"], "subgalleries": ["stingray", "haddock", "shark", "guppy"], "title": "🐟 | Here is your random fish ;)"},
+    {"name": "fish", "files": ["rybki"], "subgalleries": ["stingray", "haddock", "shark", "guppy", "moray"], "title": "🐟 | Here is your random fish ;)"},
     {"name": "fish+", "subgalleries": ["fish", "undyne"], "title": "🐟 | Here is your random \"fish\" ;)"},
     {"name": "animal", "subgalleries": ["fish", "lizard", "hedgehog"], "title": "🐪 | Here is your random animal ;)"}
   ],

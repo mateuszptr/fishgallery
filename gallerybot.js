@@ -20,7 +20,7 @@ const reload = () => {
         if(gallery.hasOwnProperty("subgalleries")) gallery.subgalleries.forEach((subgallery) => {
             urls = urls.concat(galleries.get(subgallery).urls);
         });
-        galleries.set(gallery.name, {urls: urls, title: gallery.title});
+        galleries.set(gallery.name, {urls: urls, title: gallery.title, name: gallery.name});
     });
     console.log("Reloaded");
 };
@@ -52,9 +52,13 @@ client.on('ready', () => {
 client.on('message', (message) => {
     if(!message.content.startsWith(prefix)) return;
     const gallery = message.content.replace(new RegExp("^" + prefix), '');
-    if(gallery === '$reload')
-        reload();
-    else
+    if(gallery === 'list') {
+        let msg = '```\nLista Galerii\n```\n';
+        galleries.forEach(gallery => {
+            msg = msg + `\`${gallery.name}\` `
+        });
+        message.channel.send(msg);
+    } else
         displayImage(gallery, message.channel);
 });
 
