@@ -1,0 +1,19 @@
+{
+  "name": "fishgallery",
+  "version": "1.0.0",
+  "description": "Gallery Bot",
+  "main": "gallerybot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node gallerybot.js"
+  },
+  "author": "Mon",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^11.4.2"
+  },
+  "engines": {
+    "node": "10.x",
+    "npm": "*"
+  }
+}

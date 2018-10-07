@@ -1,0 +1,13 @@
+{
+  "galleries": [
+    {"name": "undyne", "files": ["undyne"], "title": "🐟 | Here is your random Undyne ;)"},
+    {"name": "stingray", "files": ["płaszczki"], "title": "🐟 | Here is your random stingray ;)"},
+    {"name": "haddock", "files": ["plamiaki"], "title": "🐟 | Here is your random haddock ;)"},
+    {"name": "shark", "files": ["rekiny"], "title": "🦈 | Here is your random shark ;)"},
+    {"name": "lizard", "files": ["jaszczurki"], "title": "🦎 | Here is your random lizard ;)"},
+    {"name": "fish", "files": ["rybki"], "subgalleries": ["stingray", "haddock", "shark"], "title": "🐟 | Here is your random fish ;)"},
+    {"name": "animal", "subgalleries": ["fish", "lizard"], "title": "🐪 | Here is your random animal ;)"}
+  ],
+  "folder": "galerie/",
+  "prefix": "f!"
+}
