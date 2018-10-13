@@ -22,7 +22,8 @@ const reload = () => {
         });
         galleries.set(gallery.name, {urls: urls, title: gallery.title, name: gallery.name});
     });
-    console.log("Reloaded");
+
+    console.log("Loaded");
 };
 
 const displayImage = (gallery, channel) => {
@@ -31,12 +32,9 @@ const displayImage = (gallery, channel) => {
         return;
     }
 
-    //console.log('Gallery '+gallery);
     const urls = galleries.get(gallery).urls;
-    //console.log(galleries.get(gallery));
     const url = urls[Math.floor(Math.random()*urls.length)];
 
-    //console.log('Url: ' + url);
     const embed = new RichEmbed()
         .setTitle(galleries.get(gallery).title)
         .setImage(url)
@@ -46,17 +44,23 @@ const displayImage = (gallery, channel) => {
 };
 
 client.on('ready', () => {
+    client.user.setActivity(`Type ${prefix}help`, {type: "PLAYING"});
     console.log('Ready');
 });
 
 client.on('message', (message) => {
     if(!message.content.startsWith(prefix)) return;
-    const gallery = message.content.replace(new RegExp("^" + prefix), '');
+    const gallery = message.content.trimRight().replace(new RegExp("^" + prefix), '');
     if(gallery === 'list') {
-        let msg = '```\nLista Galerii\n```\n';
+        let msg = '**Galleries:** ';
         galleries.forEach(gallery => {
             msg = msg + `\`${gallery.name}\` `
         });
+        message.channel.send(msg);
+    } else if(gallery === 'help') {
+        let msg = '';
+        msg += `Use \`${prefix}list\` to display the list of galleries\n`;
+        msg += `Use \`${prefix}[gallery]\` to get a random image from gallery, for example: \`${prefix}fish\`\n`;
         message.channel.send(msg);
     } else
         displayImage(gallery, message.channel);
