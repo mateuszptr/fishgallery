@@ -49,8 +49,8 @@ client.on('ready', () => {
 });
 
 client.on('message', (message) => {
-    if(!message.content.startsWith(prefix)) return;
-    const gallery = message.content.trimRight().replace(new RegExp("^" + prefix), '');
+    if(!message.content.toLocaleLowerCase().trim().startsWith(prefix)) return;
+    const gallery = message.content.toLocaleLowerCase().trim().replace(new RegExp("^" + prefix), '').trim();
     if(gallery === 'list') {
         let msg = '**Galleries:** ';
         galleries.forEach(gallery => {
